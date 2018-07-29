@@ -5,12 +5,12 @@ class CheckingAccount(owner: Owner, balance: Float, private val limit: Float): A
         withdrawMoney(balance + limit, amount)
     }
 
-    @Throws(BankError::class)
+    @Throws(AccountError::class)
     fun transferMoney(account: Account, amount: Float) {
         try {
             withdrawMoney(amount)
             account.addMoney(amount)
-        } catch (e: BankError) {
+        } catch (e: AccountError) {
             throw e
         }
     }

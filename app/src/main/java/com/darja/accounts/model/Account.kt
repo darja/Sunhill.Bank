@@ -22,13 +22,13 @@ open class Account(
         balance += amount
     }
 
-    @Throws(BankError::class)
+    @Throws(AccountError::class)
     open fun withdrawMoney(amount: Float) {
         withdrawMoney(balance, amount)
     }
 
     @Synchronized
-    @Throws(BankError::class)
+    @Throws(AccountError::class)
     fun withdrawMoney(availableAmount: Float, amount: Float) {
         if (amount <= 0) {
             throw InvalidAmountException()
