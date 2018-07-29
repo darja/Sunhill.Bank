@@ -14,7 +14,7 @@ open class Account(
         protected set
 
     @Synchronized
-    @Throws(BankError::class)
+    @Throws(InvalidAmountException::class)
     fun addMoney(amount: Float) {
         if (amount <= 0) {
             throw InvalidAmountException()
@@ -33,7 +33,7 @@ open class Account(
         if (amount <= 0) {
             throw InvalidAmountException()
         }
-        if (amount < availableAmount) {
+        if (amount > availableAmount) {
             throw InsufficientFundsException()
         }
 
