@@ -5,6 +5,15 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class SavingsAccountTest: BaseAccountTest() {
+    @Test(expected = IllegalArgumentException::class)
+    fun testInitExcessiveRate() {
+        SavingsAccount(owner, 100f, 12f)
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun testInitNegativeRate() {
+        SavingsAccount(owner, 100f, -0.4f)
+    }
 
     @Test
     fun testApplyRate() {

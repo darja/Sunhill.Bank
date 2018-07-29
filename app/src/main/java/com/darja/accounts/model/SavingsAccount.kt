@@ -1,6 +1,11 @@
 package com.darja.accounts.model
 
 class SavingsAccount(owner: Owner, balance: Float): Account(owner, balance) {
+
+    constructor(owner: Owner, balance: Float, rate: Float) : this(owner, balance) {
+        setRate(rate)
+    }
+
     /**
      * Rate in interval [0, 1]
      */
