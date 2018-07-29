@@ -12,6 +12,9 @@ class AccountTest {
 
     @Test
     fun testInit() {
+        val emptyAccount = Account(owner)
+        assertEquals(0f, emptyAccount.balance)
+
         val account = Account(owner, 100f)
         assertEquals(100f, account.balance)
         assertEquals("John Doe", account.owner.name)
