@@ -1,12 +1,10 @@
 package com.darja.accounts
 
-import com.darja.accounts.model.Owner
 import com.darja.accounts.model.SavingsAccount
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class SavingsAccountTest {
-    private val owner = Owner(name = "John Doe")
+class SavingsAccountTest: BaseAccountTest() {
 
     @Test
     fun testApplyRate() {
